@@ -52,4 +52,36 @@ public class Generic <T> {
 ## Vài điều thú vị về Generic
 - Các bạn nhìn qua có thể nó sẽ lạ lẫm . Tuy nhiên khi bước vào lập trình từ Java 1 , các bạn đã sử dụng nó thường xuyên ! Đó chính là bởi vì ArrayList, LinkedList, HashSet, TreeSet, HashMap, Comparator, vv đều là Generic . 
 - Generic có thể giới hạn kiểu dữ liệu 
-  - Nếu class Generic <T extends String> thì chỉ các kiểu dữ liệu String được sử dụng , chẳng phải nó sẽ giới hạn kiểu dữ liệu , tối ưu hoá hơn sao ? 
+  - Nếu class Generic <T extends String> thì chỉ các kiểu dữ liệu String được sử dụng , chẳng phải nó sẽ giới hạn kiểu dữ liệu , tối ưu hoá hơn sao ? Ví dụ : 
+    ```Java
+    public class Generic<T extends String> {
+
+    private T t;
+
+    public Generic() {
+    }
+
+    public Generic(T t) {
+        this.t = t;
+    }
+    
+    }
+     ```
+  - Nếu có nhiều hơn một tham số trong danh sách tham số thì mỗi tham số kiểu phải được phân tách bằng dấu phẩy.
+## 2. Generic trong abstract và interface
+- Trong lập trình chúng ta thường sử dụng nhiều generic trong Abstract và Interface để code trở nên gọn hơn tái sử dụng được nhiều lần.
+  - Generic trong Abstract được khai báo như sau
+```Java
+    public abstract class Staff<T> {
+
+        public abstract T getStaffName();
+    }
+```
+  - Generic trong Interface được khai báo như sau
+```Java
+    public interface Staff<T> {
+        public void insert(T t);
+        public ArrayList<T> getAll();
+}
+```
+- Điều đó có thể nhận thấy Generic thật sự cũng rất dễ sử dụng , [Ở đây có link bài tập cho các bạn thử sức](https://phohen.com/post/bai-tap-ve-generics-trong-java/6021745)
