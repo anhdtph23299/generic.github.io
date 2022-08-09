@@ -84,4 +84,20 @@ public class Generic <T> {
         public ArrayList<T> getAll();
 }
 ```
+- Khi sử dụng , Chúng ta chỉ việc kế thừa interface nhưng không quên Override lại phương thức , tại vì chính interface ép chúng ta phải ghi đè .
+```Java
+    public class Demo implements Staff<String> {
+
+    @Override
+    public void insert(String t) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public ArrayList<String> getAll() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+}
+```
 - Điều đó có thể nhận thấy Generic thật sự cũng rất dễ sử dụng , [Ở đây có link bài tập cho các bạn thử sức](https://phohen.com/post/bai-tap-ve-generics-trong-java/6021745)
